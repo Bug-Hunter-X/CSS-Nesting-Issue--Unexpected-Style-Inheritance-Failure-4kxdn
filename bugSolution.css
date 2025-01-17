@@ -1,0 +1,17 @@
+The issue was resolved by ensuring that the CSS rule for the nested `div` element has higher specificity than any conflicting rules.  In this case, adding an extra class to the inner div provided sufficient specificity.
+
+```css
+.outer {
+  background-color: lightblue;
+}
+
+.outer .inner {
+  background-color: lightgreen; 
+}
+
+<div class="outer">
+  <div class="inner">This div is now lightgreen.</div>
+</div>
+```
+
+Alternatively, ensure that the CSS rules are loaded correctly and that there are no conflicting styles from other stylesheets.  Check for typos and ensure there are no conflicting selectors with higher specificity. Using browser developer tools to inspect the element's computed styles can be useful in identifying conflicting styles.
