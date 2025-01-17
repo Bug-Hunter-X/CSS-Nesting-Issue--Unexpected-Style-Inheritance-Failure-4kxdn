@@ -1,0 +1,15 @@
+The following CSS code snippet exhibits an unusual behavior.  The nested selectors aren't working as expected, and the inner element does not inherit styles from the outer element, even though the nesting and specificity seem correct.  This is particularly problematic because the expected behavior is the styling of the nested `div` element.
+
+```css
+.outer {
+  background-color: lightblue;
+}
+
+.outer div {
+  background-color: lightgreen;
+}
+
+<div class="outer">
+  <div>This div should be lightgreen, but isn't.</div>
+</div>
+```
